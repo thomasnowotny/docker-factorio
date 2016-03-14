@@ -28,12 +28,12 @@ docker run -d --name factorio \
   -v [PATH]:/opt/factorio/saves \
   thomasnowotny/factorio:latest
 ~~~
-To modify environment variables (e.g. increase savegame slots) execute:
+To modify environment variables (e.g. increase savegame slots) adapt the previous command as follows:
 ~~~sh
 docker run -d --name factorio \
   -p 34197:34197/udp \
   -v [PATH]:/opt/factorio/saves \
-  -e FACTORIO_AUTOSAVE_SLOTS=10  \
+  -e FACTORIO_AUTOSAVE_SLOTS=10 \
   thomasnowotny/factorio:latest
 ~~~
 At this point the factorio server can be started/stopped by executing
