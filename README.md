@@ -1,8 +1,8 @@
-#Factorio Game Server
+# Factorio Game Server
 
-####Introduction
+#### Introduction
 This image allows you to run a factorio game server in a docker container. It provides several evironment variables to configure your server as well as volumes to store your savegames, mods and configs in a persistant manner. On startup the container checks for existing savegames, if none is present it will create a new map. It is also possible to run multiple maps with the same image by mounting the volumes to different directories.
-####Configuration
+#### Configuration
 The following environment variables are available:
 * FACTORIO_VERSION (specifies the server binaries version to download, default is "0.12.26")
 * FACTORIO_SAVE_NAME (sets the naming of the savegame files, defaul is "mysave")
@@ -14,7 +14,7 @@ The following volumes can be mounted:
 * opt/factorio/saves
 * opt/factorio/mods
 
-####Usage
+#### Usage
 To run factorio in a container without any persistant storage execute the following command:
 ~~~sh
 docker run -d --name factorio \
@@ -45,5 +45,5 @@ or
 docker start factorio
 ~~~
 
-####Versioning
+#### Versioning
 I will try to keep this image up-to-date. If you require a previous version check the tags section or override the "FACTORIO_VERSION" environment varible with your desired factorio server version.
