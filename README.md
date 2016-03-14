@@ -31,7 +31,7 @@ To add persistant storage extend the previous command as follows (where PATH is 
 ~~~
 docker run -d --name factorio \
   -p 34197:34197/udp \
-  -v [PATH]:/opt/factorio/saves" \
+  -v [PATH]:/opt/factorio/saves \
   thomasnowotny/factorio:latest
 ~~~
 To modify environment variables (e.g. increase savegame slots) execute:
