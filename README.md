@@ -1,14 +1,11 @@
 Factorio Game Server
 ===
-
 Versioning
 ---
 I will try to keep this image up-to-date. If you require a previous version check the tags section.
 Introduction
-
 ---
 This image allows you to run a factorio game server in a docker container. It provides several evironment variables to configure your server as well as volumes to store your savegames, mods and configs in a persistant manner. On startup the container checks for existing savegames, if none is present it will create a new map. It is also possible to run multiple maps with the same image by mounting the volumes to different directories.
-
 Configuration
 ---
 The following environment variables are available:
