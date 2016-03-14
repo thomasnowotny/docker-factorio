@@ -39,6 +39,14 @@ docker run -d --name factorio \
   -e FACTORIO_AUTOSAVE_SLOTS=10  \
   thomasnowotny/factorio:latest
 ~~~
+At this point the factorio server can be started/stopped by executing
+~~~
+docker stop factorio
+~~~
+or
+~~~
+docker start factorio
+~~~
 Versioning
 ---
 I will try to keep this image up-to-date. If you require a previous version check the tags section or override the "FACTORIO_VERSION" environment varible with your desired factorio server version.
