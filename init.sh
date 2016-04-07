@@ -2,6 +2,8 @@
 
 if [ ! -f /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip ]; then
   /opt/factorio/bin/x64/factorio --create ${FACTORIO_SAVE_NAME}.zip
+else
+  # LATEST_MODIFIED=$(ls /opt/factorio/saves -lt | grep -E "_autosave|${FACTORIO_SAVE_NAME}" | head -1 | awk '{print $(NF);}')
 fi
 
 FACTORIO_SERVER_FLAGS=""
