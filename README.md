@@ -5,14 +5,38 @@ This image allows you to run a factorio game server in a docker container. It pr
 
 #### Configuration
 The following environment variables are available:
-* FACTORIO_SAVE_NAME (sets the naming of the savegame files, defaul is "save")
-* FACTORIO_AUTOSAVE_INTERVAL (sets the autosave interval in minutes, default is 10)
-* FACTORIO_AUTOSAVE_SLOTS (sets the number of autosave slots, default is 3)
-* FACTORIO_LATENCY_MS (sets the multiplayer latency in milliseconds, default is 100)
-* FACTORIO_ALLOW_COMMANDS (enable/disable console commands, allowed values are "TRUE" or "FALSE", default is "TRUE")
-* FACTORIO_AUTO_PAUSE (enable/disable auto pause on empty server, allowed values are "TRUE" or "FALSE", default is "TRUE")
-* FACTORIO_PEER_TO_PEER (enable/disable peer to peer communication, allowed values are "TRUE" or "FALSE", default is "FALSE")
-* FACTORIO_VERSION (specifies the server binaries version to download, this is only used on building the docker image)
+* SCRIPT_AUTO_LOAD_LATEST_MODIFIED
+..* Enables/disables auto load of latest modified savegame, this is useful to automatically load autosaves after unexpected server shutdowns
+..* This option should only be enabled if no persistant storage is used or if every factorio container uses it's own persistant storage
+..* Allowed values:"TRUE" or "FALSE"
+..* Default value: "FALSE"
+* FACTORIO_SAVE_NAME
+..* Sets the savegame filename (without extension)
+..* Default value: "save"
+* FACTORIO_AUTOSAVE_INTERVAL
+..* Sets the autosave interval in minutes
+..* Default value: 10
+* FACTORIO_AUTOSAVE_SLOTS
+..* Sets the number of autosave slots
+..* Default value: 3
+* FACTORIO_LATENCY_MS
+..* Sets the multiplayer latency in milliseconds
+..* Default value: 100
+* FACTORIO_ALLOW_COMMANDS
+..* Enables/disables console commands
+..* Allowed values: "TRUE" or "FALSE"
+..* Default value: "TRUE"
+* FACTORIO_AUTO_PAUSE
+..* Enables/disables auto pause on empty server
+..* Allowed values: "TRUE" or "FALSE"
+..* Default value: "TRUE"
+* FACTORIO_PEER_TO_PEER
+..* Enables/disables peer to peer communication
+..* Allowed values:"TRUE" or "FALSE"
+..* Default value: "FALSE"
+* FACTORIO_VERSION
+..* Specifies the server binaries version to download
+..* This is only used during docker image build process
 
 The following volumes can be mounted:
 * opt/factorio/config

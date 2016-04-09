@@ -1,9 +1,15 @@
 #!/bin/bash
 
-if [ ! -f /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip ]; then
+if [[ ! -f /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip ]]; then
   /opt/factorio/bin/x64/factorio --create ${FACTORIO_SAVE_NAME}.zip
-else
-  # LATEST_MODIFIED=$(ls /opt/factorio/saves -lt | grep -E "_autosave|${FACTORIO_SAVE_NAME}" | head -1 | awk '{print $(NF);}')
+fi
+
+if [[ ${SCRIPT_AUTO_LOAD_LATEST_MODIFIED} = "TRUE" ]]; then
+  LATEST_MODIFIED=$(ls /opt/factorio/saves -lt | grep -E "_autosave|${FACTORIO_SAVE_NAME}" | head -1 | awk '{print $(NF);}')
+  if [[ $LATEST_MODIFIED != ${FACTORIO_SAVE_NAME}.zip ]]; then
+    mv -f /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip.bkp
+    cp -f /opt/factorio/saves/$LATEST_MODIFIED /opt/factorio/saves/${FACTORIO_SAVE_NAME}.zip
+  fi
 fi
 
 FACTORIO_SERVER_FLAGS=""
