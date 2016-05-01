@@ -3,6 +3,10 @@
 ### Introduction
 This image allows you to run a factorio game server in a docker container. It provides several evironment variables to configure your server as well as volumes to store your savegames, mods and configs in a persistant manner. On startup the container checks for existing savegames, if none is present it will create a new map. It is also possible to run multiple maps with the same image by mounting the volumes for each container to different directories.
 
+#### Current versions
+Latest stable release: 0.12.29
+Latest experimental release: 0.12.32
+
 ### News
 #### 2014-04-10
 It seems that the steam factorio client is still running on 0.12.29 and will not work with the latest version (0.12.30) of the server. In order to run the correct server version use thomasnowotny/factorio:0.12.29 when starting your container.
